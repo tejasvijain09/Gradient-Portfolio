@@ -1,0 +1,22 @@
+packages:
+  "framer-motion": "For premium scroll animations, page transitions, and micro-interactions"
+  "react-hook-form": "For efficient and robust form state management in the contact section"
+  "@hookform/resolvers": "For Zod schema validation integration with react-hook-form"
+  "clsx": "Utility for constructing className strings conditionally"
+  "tailwind-merge": "Utility for intelligently merging tailwind classes without style conflicts"
+
+images:
+  - path: "artifacts/portfolio/public/images/avatar-placeholder.png"
+    description: "A dark moody circular avatar placeholder featuring a glowing abstract neon blue and purple geometric shape representing a futuristic coder"
+    aspect_ratio: "1:1"
+  - path: "artifacts/portfolio/public/images/project-ecommerce.png"
+    description: "A beautiful abstract glassmorphism UI element showing a subtle glowing shopping cart icon over a dark gradient background in deep blues and purples"
+    aspect_ratio: "16:9"
+  - path: "artifacts/portfolio/public/images/cert-bg.png"
+    description: "Abstract subtle dark gradient mesh in indigo and violet, used for a certificate card header"
+    aspect_ratio: "16:9"
+
+notes:
+  - The application is a frontend-only portfolio.
+  - The contact form simulates a backend mutation via a mock TanStack Query hook.
+  - All styling utilizes a strict dark mode aesthetic centered around slate (bg-slate-900) and vibrant blue-purple gradients.

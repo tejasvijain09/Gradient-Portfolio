@@ -1,0 +1,143 @@
+Create a modern, visually appealing personal portfolio website using HTML, CSS, and minimal JavaScript.
+
+The design must be inspired by a dark-themed developer portfolio with gradient colors (blue to purple), glassmorphism cards, and smooth UI similar to modern portfolios.
+
+General Design:
+- Dark background (#0f172a or similar)
+- Gradient accents (blue to purple)
+- Rounded cards with soft shadows and borders
+- Smooth scrolling
+- Responsive for mobile and desktop
+- Use Google Font (Poppins or Inter)
+
+-----------------------------------
+
+1. Navbar:
+- Fixed at top
+- Left: "Tejasvi Jain Portfolio"
+- Right: Home, Skills, Projects, Certifications, Achievements, Resume, Contact
+- Highlight active section
+
+-----------------------------------
+
+2. Hero Section:
+- Circular profile image at center
+- Large gradient heading: "Tejasvi Jain"
+- Subtitle: "Full Stack Developer"
+- Short description (1–2 lines)
+- Skill tags (Java, Python, React, JavaScript, Node.js, MongoDB)
+- Two buttons:
+  - "View My Work"
+  - "Contact Me"
+
+-----------------------------------
+
+3. About Section:
+Split into two columns:
+
+Left:
+- Card: Quick Facts
+  - Location: India
+  - Education: B.Tech CSE
+  - Experience: Fresher / Internship
+
+- Card: Interests
+  - Coding
+  - Reading
+  - Tech exploration
+
+Right:
+- Card: My Journey (short paragraph)
+- Card: My Approach (short paragraph)
+
+-----------------------------------
+
+4. Skills Section (IMPORTANT):
+- Title: "Technical Arsenal"
+- Filter buttons: All, Programming, Frontend, Backend, Database, Tools
+- Skill cards with:
+  - Icon
+  - Skill name
+  - Progress bar (percentage)
+
+Skills to include:
+Java, Python, C++, HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, Git
+
+-----------------------------------
+
+5. Projects Section:
+- Title: "Featured Projects"
+- Filter buttons: All, Full Stack, Frontend, API
+
+Add project card:
+Title: "Forever E-commerce Website"
+Description: MERN stack application with authentication, cart, and product listing
+Tech stack badges
+Buttons:
+- Live Demo
+- Source Code
+
+Use card layout with image placeholder
+
+-----------------------------------
+
+6. Certifications Section:
+- Grid layout
+- Each card includes:
+  - Certificate image placeholder
+  - Title
+  - Platform (Coursera, NPTEL, etc.)
+  - Date
+
+-----------------------------------
+
+7. Achievements Section:
+- Vertical timeline or stacked cards
+Examples:
+- 50-day LeetCode streak
+- 150+ problems solved
+- Academic achievements
+
+-----------------------------------
+
+8. Resume Section:
+- Title: "My Resume"
+- Show education and experience cards
+- Add button: "Download Resume"
+
+-----------------------------------
+
+9. Contact Section:
+Split layout:
+
+Left:
+- Contact form (Name, Email, Message, Send button)
+
+Right:
+- Contact info:
+  - Email
+  - Phone
+  - LinkedIn
+  - GitHub
+
+-----------------------------------
+
+10. Footer:
+- Short message: "Looking forward to hearing from you"
+- Social icons
+
+-----------------------------------
+
+Extra UI Requirements:
+- Smooth hover effects
+- Buttons with gradient background
+- Cards slightly lift on hover
+- Clean spacing and alignment
+- Do NOT use heavy libraries
+
+-----------------------------------
+
+Output:
+- Provide full working code
+- Prefer single index.html with internal CSS
+- Must run directly without setup
