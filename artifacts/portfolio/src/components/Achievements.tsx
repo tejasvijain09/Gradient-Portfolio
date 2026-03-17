@@ -2,28 +2,22 @@ import { motion } from "framer-motion";
 
 const achievements = [
   {
-    icon: "🔥",
-    title: "50-Day Streak on LeetCode",
-    date: "April 2025",
-    description: "Maintained a 50-day daily problem-solving streak on LeetCode, showcasing consistency and dedication to continuous algorithmic learning."
-  },
-  {
-    icon: "💡",
-    title: "150+ LeetCode Problems Solved",
-    date: "April 2025",
-    description: "Solved 150+ coding questions on LeetCode across various topics, strengthening problem-solving skills and data structure mastery."
-  },
-  {
     icon: "🏆",
-    title: "Academic Excellence Award",
-    date: "August 2024",
-    description: "Achieved top academic performance in the B.Tech CSE program, recognized by university faculty for outstanding results."
+    title: "Pantonix Hackathon",
+    date: "2024",
+    description: "Collaborated with a 4-member team to design and develop a Job Search System website, streamlining job listings, applications, and candidate discovery for seamless hiring."
   },
   {
     icon: "⭐",
-    title: "Smart India Hackathon Participant",
-    date: "August 2024",
-    description: "Participated in the prestigious Smart India Hackathon, building an innovative platform designed to assist and empower farmers."
+    title: "4-Star Silver Badge in C++ — HackerRank",
+    date: "2024",
+    description: "Earned a 4-star Silver Badge in C++ on HackerRank, demonstrating solid proficiency in core language concepts, problem-solving skills, and algorithmic thinking."
+  },
+  {
+    icon: "🥉",
+    title: "2-Bronze Badge in Python — HackerRank",
+    date: "2024",
+    description: "Secured a 2-Bronze Badge in Python on HackerRank, showcasing strong command over Python language fundamentals and ability to solve competitive programming challenges."
   }
 ];
 
@@ -35,10 +29,10 @@ export function Achievements() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold font-display mb-4 text-gradient">Achievements</h2>
-          <div className="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full" />
+          <h2 className="text-4xl md:text-5xl font-bold font-display mb-4 text-gradient">Achievements</h2>
+          <div className="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto" />
         </motion.div>
 
         <div className="space-y-6">
@@ -54,7 +48,7 @@ export function Achievements() {
               <div className="w-16 h-16 shrink-0 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-600/20 border border-white/10 flex items-center justify-center text-3xl shadow-inner">
                 {item.icon}
               </div>
-              
+
               <div className="flex-grow">
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-2">
                   <h3 className="text-xl font-bold font-display text-foreground">{item.title}</h3>
@@ -62,9 +56,7 @@ export function Achievements() {
                     {item.date}
                   </span>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
+                <p className="text-muted-foreground leading-relaxed">{item.description}</p>
               </div>
             </motion.div>
           ))}
