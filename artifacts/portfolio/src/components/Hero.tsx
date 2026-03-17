@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Mail } from "lucide-react";
 
 export function Hero() {
-  const skills = ["Java", "Python", "React", "JavaScript", "Node.js", "MongoDB"];
+  const skills = ["Java", "React", "JavaScript", "Node.js", "MySQL"];
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 relative overflow-hidden">
