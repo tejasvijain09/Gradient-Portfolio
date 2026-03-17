@@ -59,10 +59,10 @@ export function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className={`text-base font-semibold transition-colors hover:text-primary ${
-                activeSection === item.href.substring(1) 
-                  ? "text-primary" 
-                  : "text-muted-foreground"
+              className={`text-base font-semibold transition-all duration-300 px-4 py-1.5 rounded-lg ${
+                activeSection === item.href.substring(1)
+                  ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-primary/25"
+                  : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {item.name}
