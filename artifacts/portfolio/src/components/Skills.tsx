@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const allSkills = [
   { name: "Java", icon: "☕", progress: 85, category: "Programming" },
-  { name: "Python", icon: "🐍", progress: 75, category: "Programming" },
   { name: "C++", icon: "⚙️", progress: 70, category: "Programming" },
   { name: "HTML", icon: "📄", progress: 95, category: "Frontend" },
   { name: "CSS", icon: "🎨", progress: 85, category: "Frontend" },
@@ -11,7 +10,9 @@ const allSkills = [
   { name: "React", icon: "⚛️", progress: 90, category: "Frontend" },
   { name: "Node.js", icon: "🟢", progress: 85, category: "Backend" },
   { name: "Express", icon: "🚀", progress: 80, category: "Backend" },
+  { name: "Spring Boot", icon: "🌱", progress: 75, category: "Backend" },
   { name: "MongoDB", icon: "🍃", progress: 80, category: "Database" },
+  { name: "MySQL", icon: "🐬", progress: 80, category: "Database" },
   { name: "Git", icon: "🔀", progress: 85, category: "Tools" },
 ];
 
