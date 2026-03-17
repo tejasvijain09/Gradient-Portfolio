@@ -49,8 +49,8 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#home" className="text-2xl font-bold font-display tracking-tight text-gradient relative z-50">
-          Tejasvi Jain
+        <a href="#home" className="text-3xl font-extrabold font-display tracking-tight text-gradient relative z-50">
+          TejDev
         </a>
 
         {/* Desktop Nav */}
