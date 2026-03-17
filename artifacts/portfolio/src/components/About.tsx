@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, GraduationCap, Briefcase, Monitor, BookOpen, Music, Route, Lightbulb } from "lucide-react";
+import { MapPin, GraduationCap, Briefcase, Monitor, Music, Route, Lightbulb } from "lucide-react";
 
 const quickFacts = [
   {
@@ -24,14 +24,14 @@ const quickFacts = [
 
 const interests = [
   {
-    icon: <Monitor size={18} />,
-    color: "from-blue-500 to-indigo-500",
-    label: "Coding",
+    icon: <Music size={18} />,
+    color: "from-pink-500 to-rose-500",
+    label: "Listening to Music",
   },
   {
-    icon: <BookOpen size={18} />,
-    color: "from-green-500 to-emerald-500",
-    label: "Reading",
+    icon: <Monitor size={18} />,
+    color: "from-blue-500 to-indigo-500",
+    label: "Web Surfing",
   },
   {
     icon: <Route size={18} />,
