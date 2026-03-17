@@ -61,7 +61,7 @@ export function Navbar() {
               href={item.href}
               className={`text-base font-semibold transition-all duration-300 px-4 py-1.5 rounded-lg ${
                 activeSection === item.href.substring(1)
-                  ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-primary/25"
+                  ? "bg-white/10 text-primary border border-white/15"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
