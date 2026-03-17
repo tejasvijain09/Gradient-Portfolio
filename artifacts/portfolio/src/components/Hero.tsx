@@ -74,9 +74,9 @@ export function Hero() {
           <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-full p-2 bg-gradient-to-tr from-blue-500 to-purple-600 animate-[spin_10s_linear_infinite]">
             <div className="w-full h-full rounded-full bg-background overflow-hidden animate-[spin_10s_linear_infinite_reverse]">
               <img 
-                src={`${import.meta.env.BASE_URL}images/avatar-placeholder.png`} 
+                src={`${import.meta.env.BASE_URL}images/tejasvi-profile.png`} 
                 alt="Tejasvi Jain" 
-                className="w-full h-full object-cover opacity-90"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </div>

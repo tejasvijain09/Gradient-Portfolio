@@ -59,7 +59,7 @@ export function Navbar() {
             <a
               key={item.name}
               href={item.href}
-              className={`text-sm font-medium transition-colors hover:text-primary ${
+              className={`text-base font-semibold transition-colors hover:text-primary ${
                 activeSection === item.href.substring(1) 
                   ? "text-primary" 
                   : "text-muted-foreground"
