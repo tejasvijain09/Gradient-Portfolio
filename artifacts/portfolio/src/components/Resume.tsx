@@ -1,126 +1,297 @@
-import { motion } from "framer-motion";
-import { Download, GraduationCap, Briefcase } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Download, Mail, Phone, Linkedin, Github } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const education = [
+const tabs = ["Education", "Training", "Projects", "Certificates", "Achievements"];
+
+const educationData = [
   {
     institution: "Lovely Professional University",
-    degree: "B.Tech Computer Science & Engineering",
-    duration: "Since August 2022",
     location: "Punjab, India",
-    score: "CGPA: 8.16*"
+    degree: "Bachelor of Technology — Computer Science and Engineering",
+    duration: "Aug '23 – Present",
+    score: "CGPA: 8.45",
   },
   {
-    institution: "Intermediate (12th)",
-    degree: "High School Education",
-    duration: "April 2021 - March 2022",
-    location: "India",
-    score: "Percentage: 90.4%"
+    institution: "DM Public Senior Secondary School",
+    location: "Bathinda, Punjab",
+    degree: "Intermediate",
+    duration: "Apr '22 – May '23",
+    score: "Percentage: 63.6%",
   },
   {
-    institution: "Matriculation (10th)",
-    degree: "Secondary Education",
-    duration: "April 2019 - March 2020",
-    location: "India",
-    score: "Percentage: 93.3%"
-  }
+    institution: "KV SLIET Longowal",
+    location: "Sangrur, Punjab",
+    degree: "Matriculation",
+    duration: "Apr '20 – May '21",
+    score: "Percentage: 94%",
+  },
 ];
 
+const trainingData = [
+  {
+    category: "INTERNSHIP",
+    title: "E-Commerce Web Application using MERN Stack",
+    org: "MyVirtualTeams (IT Services Company)",
+    duration: "Jun '25 – Jul '25",
+    points: [
+      "Acquired comprehensive understanding of full-stack development by mastering the MERN stack and applying end-to-end concepts in a real-world e-commerce project.",
+      "Strengthened API integration and authentication expertise by learning RESTful architecture, JWT-based security, and secure client-server communication.",
+      "Enhanced problem-solving and debugging capabilities by analysing deployment errors, optimizing code structure, and implementing clean coding practices.",
+    ],
+    tech: "MongoDB, Express, React, Node.js, JWT",
+  },
+];
+
+const projectsData = [
+  {
+    category: "PROJECT",
+    title: "Intelligent CPU Scheduler System",
+    org: "CPP, Matplotlib",
+    duration: "Apr '25",
+    points: [
+      "Developed an intelligent simulation tool to evaluate and compare 4 CPU scheduling algorithms, improving understanding of optimal process execution behaviour.",
+      "Implemented FCFS, Round Robin, SJF, and Priority scheduling in C++, with performance visualization using Gantt charts and metric plots via Matplotlib.",
+      "Analysed key metrics including average waiting time, turnaround time, and CPU utilization, enabling clear performance comparison across multiple test cases (10–20 processes).",
+    ],
+    tech: "C++, Matplotlib",
+  },
+  {
+    category: "PROJECT",
+    title: "Art Critique Bot",
+    org: "GPT-4, LLM, Streamlit",
+    duration: "Jan '25",
+    points: [
+      "Designed an AI-powered system to analyse and critique digital artworks, generating structured feedback across 3–5 artistic dimensions (composition, colour, style, creativity).",
+      "Built the application using GPT-4 with Streamlit UI, and deployed via Docker to support multi-user access in a cloud environment.",
+      "Enabled automated critique generation for multiple artwork styles, reducing manual review effort and improving feedback consistency by standardizing output format.",
+    ],
+    tech: "GPT-4, LLM, Streamlit, Docker",
+  },
+];
+
+const certificatesData = [
+  { title: "ChatGPT, Generative AI & LLM", platform: "Infosys Springboard", date: "Aug '25" },
+  { title: "GitHub Mastery", platform: "GeeksForGeeks", date: "Jun '25" },
+  { title: "Hardware and Operating Systems", platform: "Coursera IBM", date: "Aug '24" },
+  { title: "Entrepreneurship Learning Pathway", platform: "LinkedIn Learning", date: "Oct '23" },
+];
+
+const achievementsData = [
+  {
+    icon: "🏆",
+    title: "Pantonix Hackathon",
+    description: "Collaborated with a 4-member team to design and develop a Job Search System website, streamlining job listings, applications, and candidate discovery.",
+  },
+  {
+    icon: "⭐",
+    title: "4-Star Silver Badge in C++ — HackerRank",
+    description: "Earned a 4-star Silver Badge in C++ on HackerRank, demonstrating solid proficiency in core language concepts and effective problem-solving skills.",
+  },
+  {
+    icon: "🥉",
+    title: "2-Bronze Badge in Python — HackerRank",
+    description: "Secured a 2-Bronze Badge in Python on HackerRank, showcasing strong command over language fundamentals and problem-solving abilities.",
+  },
+];
+
+function CardEntry({ category, title, org, duration, points, tech }: {
+  category: string; title: string; org: string; duration: string; points: string[]; tech: string;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="glass-card rounded-2xl p-6 border border-white/5 hover:border-primary/20 transition-colors"
+    >
+      <p className="text-xs font-bold tracking-widest text-primary/70 mb-2 uppercase">{category}</p>
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-1">
+        <h4 className="text-lg font-bold font-display text-foreground">{title}</h4>
+        <span className="text-sm font-semibold text-primary shrink-0">{duration}</span>
+      </div>
+      <p className="text-sm text-muted-foreground mb-4">{org}</p>
+      <ul className="space-y-2 mb-4">
+        {points.map((p, i) => (
+          <li key={i} className="flex gap-2 text-sm text-muted-foreground leading-relaxed">
+            <span className="text-primary mt-1 shrink-0">•</span>
+            <span>{p}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="text-sm text-muted-foreground">
+        <span className="text-foreground font-semibold">Tech:</span> {tech}
+      </p>
+    </motion.div>
+  );
+}
+
 export function Resume() {
+  const [activeTab, setActiveTab] = useState("Education");
   const { toast } = useToast();
 
   const handleDownload = () => {
-    toast({
-      title: "Resume Download",
-      description: "Resume download will be available soon!",
-    });
+    toast({ title: "Resume Download", description: "Resume download will be available soon!" });
   };
 
   return (
     <section id="resume" className="py-24 bg-card/30 relative">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <div className="max-w-5xl mx-auto px-6">
+
+        {/* Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-8"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold font-display mb-4">
+            <span className="text-foreground">My </span>
+            <span className="text-gradient">Resume</span>
+          </h2>
+          <div className="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto" />
+        </motion.div>
+
+        {/* Contact Info Row */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-3 mb-10"
+        >
+          {[
+            { icon: <Mail size={14} />, label: "jain_tejasvi@icloud.com" },
+            { icon: <Phone size={14} />, label: "+91 - 9815408330" },
+            { icon: <Linkedin size={14} />, label: "LinkedIn", href: "https://linkedin.com/in/tejasvi-2005y/" },
+            { icon: <Github size={14} />, label: "GitHub", href: "https://github.com/tejasvijain09" },
+          ].map((item) => (
+            <a
+              key={item.label}
+              href={item.href ?? "#"}
+              target={item.href ? "_blank" : undefined}
+              rel="noreferrer"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/60 border border-white/10 text-sm text-muted-foreground hover:text-primary hover:border-primary/30 transition-colors"
+            >
+              <span className="text-primary">{item.icon}</span>
+              {item.label}
+            </a>
+          ))}
+        </motion.div>
+
+        {/* Tab Buttons */}
+        <div className="flex flex-wrap justify-center gap-2 mb-10">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                activeTab === tab
+                  ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-primary/25"
+                  : "bg-secondary text-muted-foreground hover:text-foreground border border-white/5"
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        {/* Tab Content */}
+        <AnimatePresence mode="wait">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            key={activeTab}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.2 }}
+            className="space-y-5"
           >
-            <h2 className="text-4xl font-bold font-display mb-4 text-gradient">My Resume</h2>
-            <div className="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full" />
+            {/* Education */}
+            {activeTab === "Education" && educationData.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.07 }}
+                className="glass-card rounded-2xl p-6 border border-white/5 hover:border-primary/20 transition-colors"
+              >
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1 mb-1">
+                  <h4 className="text-lg font-bold font-display text-primary">{item.institution}</h4>
+                  <span className="text-sm font-semibold text-primary/80 shrink-0">{item.duration}</span>
+                </div>
+                <p className="text-sm text-muted-foreground mb-3">{item.location}</p>
+                <p className="text-sm font-semibold text-foreground mb-1">{item.degree}</p>
+                <p className="text-sm text-muted-foreground">{item.score}</p>
+              </motion.div>
+            ))}
+
+            {/* Training */}
+            {activeTab === "Training" && trainingData.map((item, i) => (
+              <CardEntry key={i} {...item} />
+            ))}
+
+            {/* Projects */}
+            {activeTab === "Projects" && projectsData.map((item, i) => (
+              <CardEntry key={i} {...item} />
+            ))}
+
+            {/* Certificates */}
+            {activeTab === "Certificates" && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {certificatesData.map((cert, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.07 }}
+                    className="glass-card rounded-2xl p-5 border border-white/5 hover:border-primary/20 transition-colors"
+                  >
+                    <div className="flex items-start justify-between gap-2 mb-2">
+                      <h4 className="text-base font-bold font-display text-foreground leading-snug">{cert.title}</h4>
+                      <span className="text-xs font-semibold text-primary shrink-0 mt-0.5">{cert.date}</span>
+                    </div>
+                    <span className="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium">
+                      {cert.platform}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            )}
+
+            {/* Achievements */}
+            {activeTab === "Achievements" && achievementsData.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.07 }}
+                className="glass-card rounded-2xl p-6 border border-white/5 hover:border-primary/20 transition-colors flex gap-5 items-start"
+              >
+                <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-2xl shrink-0">
+                  {item.icon}
+                </div>
+                <div>
+                  <h4 className="text-base font-bold font-display text-foreground mb-2">{item.title}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
-          
-          <motion.button
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+        </AnimatePresence>
+
+        {/* Download Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center mt-12"
+        >
+          <button
             onClick={handleDownload}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 w-fit"
+            className="flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             <Download size={18} /> Download Resume
-          </motion.button>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Education Timeline */}
-          <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
-                <GraduationCap size={24} />
-              </div>
-              <h3 className="text-2xl font-bold font-display text-foreground">Education</h3>
-            </div>
-            
-            <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
-              {education.map((item, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
-                >
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-secondary text-primary shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">
-                    <div className="w-2 h-2 rounded-full bg-primary" />
-                  </div>
-                  
-                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-card p-6 rounded-2xl group-hover:border-primary/30 transition-colors">
-                    <span className="text-primary font-semibold text-sm mb-1 block">{item.duration}</span>
-                    <h4 className="text-lg font-bold font-display text-foreground">{item.degree}</h4>
-                    <span className="text-muted-foreground text-sm font-medium mb-3 block">{item.institution}</span>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {item.location} • <strong className="text-foreground">{item.score}</strong>
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Experience */}
-          <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-10 h-10 rounded-xl bg-accent/20 flex items-center justify-center text-accent">
-                <Briefcase size={24} />
-              </div>
-              <h3 className="text-2xl font-bold font-display text-foreground">Experience</h3>
-            </div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="glass-card p-8 rounded-2xl border-l-4 border-l-accent"
-            >
-              <span className="text-accent font-semibold text-sm mb-1 block">2024</span>
-              <h4 className="text-xl font-bold font-display text-foreground mb-1">Full Stack Developer Intern</h4>
-              <p className="text-muted-foreground mb-4">Tech Company</p>
-              <p className="text-muted-foreground leading-relaxed">
-                Worked actively on MERN stack projects. Responsibilities included building responsive web applications, developing robust RESTful APIs, and collaborating with senior engineers to optimize database queries and frontend state management.
-              </p>
-            </motion.div>
-          </div>
-        </div>
+          </button>
+        </motion.div>
       </div>
     </section>
   );
