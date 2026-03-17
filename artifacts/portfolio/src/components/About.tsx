@@ -104,7 +104,7 @@ export function About() {
             className="lg:col-span-7 space-y-6"
           >
             {/* My Journey Card */}
-            <div className="glass-card rounded-2xl p-8 hover:-translate-y-1 transition-transform duration-300 h-full">
+            <div className="glass-card rounded-2xl p-8 hover:-translate-y-1 transition-transform duration-300">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white shadow-lg">
                   <Route size={18} />
