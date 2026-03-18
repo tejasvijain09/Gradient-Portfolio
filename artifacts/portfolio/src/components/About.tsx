@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
 import { Route, Lightbulb } from "lucide-react";
-import { FaMapMarkerAlt, FaGraduationCap, FaBriefcase, FaHeadphones, FaGlobe, FaMicrochip } from "react-icons/fa";
+import { FaMapMarkerAlt, FaGraduationCap, FaBriefcase, FaMusic, FaLaptop, FaMicrochip } from "react-icons/fa";
 
 const quickFacts = [
   {
-    icon: <FaMapMarkerAlt size={18} />,
+    icon: <FaMapMarkerAlt size={20} />,
     color: "from-pink-500 to-rose-500",
     label: "Location",
     value: "India",
   },
   {
-    icon: <FaGraduationCap size={18} />,
+    icon: <FaGraduationCap size={20} />,
     color: "from-blue-500 to-cyan-500",
     label: "Education",
     value: "Pursuing B.Tech in Computer Science",
   },
   {
-    icon: <FaBriefcase size={18} />,
+    icon: <FaBriefcase size={20} />,
     color: "from-orange-500 to-amber-500",
     label: "Experience",
     value: "Internship",
@@ -25,17 +25,17 @@ const quickFacts = [
 
 const interests = [
   {
-    icon: <FaHeadphones size={18} />,
+    icon: <FaMusic size={20} />,
     color: "from-pink-500 to-rose-500",
     label: "Listening to Music",
   },
   {
-    icon: <FaGlobe size={18} />,
+    icon: <FaLaptop size={20} />,
     color: "from-blue-500 to-indigo-500",
     label: "Web Surfing",
   },
   {
-    icon: <FaMicrochip size={18} />,
+    icon: <FaMicrochip size={20} />,
     color: "from-purple-500 to-violet-500",
     label: "Tech Exploration",
   },
