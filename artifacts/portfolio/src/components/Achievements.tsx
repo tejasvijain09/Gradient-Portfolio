@@ -2,22 +2,22 @@ import { motion } from "framer-motion";
 
 const achievements = [
   {
-    icon: "🏆",
-    title: "Pantonix Hackathon",
-    date: "2024",
-    description: "Collaborated with a 4-member team to design and develop a Job Search System website, streamlining job listings, applications, and candidate discovery for seamless hiring."
-  },
-  {
     icon: "⭐",
     title: "4-Star Silver Badge in C++ — HackerRank",
-    date: "2024",
+    date: "April 2025",
     description: "Earned a 4-star Silver Badge in C++ on HackerRank, demonstrating solid proficiency in core language concepts, problem-solving skills, and algorithmic thinking."
   },
   {
     icon: "🥉",
-    title: "2-Bronze Badge in Python — HackerRank",
-    date: "2024",
-    description: "Secured a 2-Bronze Badge in Python on HackerRank, showcasing strong command over Python language fundamentals and ability to solve competitive programming challenges."
+    title: "2-Star Bronze Badge in Python — HackerRank",
+    date: "July 2025",
+    description: "Secured a 2-Star Bronze Badge in Python on HackerRank, showcasing strong command over Python language fundamentals and ability to solve competitive programming challenges."
+  },
+  {
+    icon: "🏆",
+    title: "Pantonix Hackathon",
+    date: "March 2024",
+    description: "Collaborated with a 4-member team to design and develop a Job Search System website, streamlining job listings, applications, and candidate discovery for seamless hiring."
   }
 ];
 
