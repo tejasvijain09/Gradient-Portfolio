@@ -127,8 +127,8 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground mb-1">Email</p>
-                    <a href="mailto:tejasvi.jain@email.com" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                      tejasvi.jain@email.com
+                    <a href="mailto:jain_tejasvi@icloud.com" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
+                      jain_tejasvi@icloud.com
                     </a>
                   </div>
                 </li>
@@ -139,8 +139,8 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground mb-1">Phone</p>
-                    <a href="tel:+91XXXXXXXXXX" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                      +91-XXXXXXXXXX
+                    <a href="tel:+919815408330" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
+                      +91-9815408330
                     </a>
                   </div>
                 </li>
@@ -151,8 +151,8 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground mb-1">LinkedIn</p>
-                    <a href="#" onClick={(e) => e.preventDefault()} className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                      linkedin.com/in/tejasvi-jain
+                    <a href="https://linkedin.com/in/tejasvi-2005y" target="_blank" rel="noreferrer" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
+                      linkedin.com/in/tejasvi-2005y
                     </a>
                   </div>
                 </li>
@@ -163,8 +163,8 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-sm font-medium text-muted-foreground mb-1">GitHub</p>
-                    <a href="#" onClick={(e) => e.preventDefault()} className="text-lg font-medium text-foreground hover:text-primary transition-colors">
-                      github.com/tejasvi-jain
+                    <a href="https://github.com/tejasvijain09" target="_blank" rel="noreferrer" className="text-lg font-medium text-foreground hover:text-primary transition-colors">
+                      github.com/tejasvijain09
                     </a>
                   </div>
                 </li>
