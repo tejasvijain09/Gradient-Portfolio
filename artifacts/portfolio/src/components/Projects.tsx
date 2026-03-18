@@ -7,11 +7,11 @@ const allProjects = [
     id: 1,
     title: "E-Commerce Web Application",
     description: "A full-stack MERN e-commerce application built during internship at MyVirtualTeams. Features user authentication with JWT, product listings, shopping cart, and order management. Follows RESTful API architecture with secure client-server communication.",
-    image: "project-ecommerce.png",
+    image: "forever-ecommerce.png",
     categories: ["Full Stack", "MERN"],
     tech: ["React", "Node.js", "Express", "MongoDB", "JWT"],
-    liveUrl: "#",
-    sourceUrl: "https://github.com/tejasvijain09"
+    liveUrl: "https://foreverbuy.in/",
+    sourceUrl: "https://github.com/tejasvijain09/Forever-"
   },
   {
     id: 2,
