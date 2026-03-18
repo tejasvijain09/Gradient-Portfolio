@@ -8,6 +8,8 @@ const allProjects = [
     title: "E-Commerce Web Application",
     description: "A full-stack MERN e-commerce application built during internship at MyVirtualTeams. Features user authentication with JWT, product listings, shopping cart, and order management. Follows RESTful API architecture with secure client-server communication.",
     image: "forever-ecommerce.png",
+    imagePosition: "object-top",
+    imageStyle: {},
     categories: ["Full Stack", "MERN"],
     tech: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     liveUrl: "https://foreverbuy.in/",
@@ -18,6 +20,8 @@ const allProjects = [
     title: "Intelligent CPU Scheduler System",
     description: "An intelligent simulation tool to evaluate and compare 4 CPU scheduling algorithms (FCFS, Round Robin, SJF, Priority). Implements performance visualization using Gantt charts and metric plots, analysing waiting time, turnaround time, and CPU utilization across 10–20 processes.",
     image: "cpu-scheduler.png",
+    imagePosition: "object-top",
+    imageStyle: {},
     categories: ["Systems", "C++"],
     tech: ["C++", "Matplotlib", "Algorithm Design"],
     liveUrl: "https://tejasvijain09.github.io/Intelligent-CPU-Scheduler-Simulator/",
@@ -28,6 +32,8 @@ const allProjects = [
     title: "Art Critique Bot",
     description: "An AI-powered system that analyses and critiques digital artworks, generating structured feedback across 3–5 artistic dimensions (composition, colour, style, creativity). Built with GPT-4 and Streamlit UI, deployed via Docker for multi-user cloud access.",
     image: "art-critique-bot-v2.png",
+    imagePosition: "object-top",
+    imageStyle: { filter: "brightness(0.85) contrast(1.1) saturate(1.2)" },
     categories: ["AI/ML", "Full Stack"],
     tech: ["GPT-4", "LLM", "Streamlit", "Docker", "Python"],
     liveUrl: "https://art-critique-bot-iubu3ncjq9mar7njrxrcx7.streamlit.app",
@@ -93,7 +99,8 @@ export function Projects() {
                   <img
                     src={`${import.meta.env.BASE_URL}images/${project.image}`}
                     alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className={`w-full h-full object-cover ${project.imagePosition} group-hover:scale-110 transition-transform duration-700`}
+                    style={project.imageStyle}
                   />
                   <div className="absolute top-4 left-4 z-20 flex flex-wrap gap-2">
                     {project.categories.map(cat => (
