@@ -91,8 +91,8 @@ const achievementsData = [
   },
   {
     icon: "🥉",
-    title: "2-Bronze Badge in Python — HackerRank",
-    description: "Secured a 2-Bronze Badge in Python on HackerRank, showcasing strong command over language fundamentals and problem-solving abilities.",
+    title: "2-Star Bronze Badge in Python — HackerRank",
+    description: "Secured a 2-Star Bronze Badge in Python on HackerRank, showcasing strong command over language fundamentals and problem-solving abilities.",
   },
 ];
 
