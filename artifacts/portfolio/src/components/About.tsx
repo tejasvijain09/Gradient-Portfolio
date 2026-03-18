@@ -27,29 +27,35 @@ export function About() {
             {/* Snapshot — 3 mini stat cards */}
             <div className="glass-card rounded-2xl p-6">
               <p className="text-xs font-semibold tracking-widest text-primary uppercase mb-5">— At a Glance</p>
-              <div className="grid grid-cols-3 gap-3">
-                <div className="flex flex-col items-center text-center p-3 rounded-xl bg-gradient-to-br from-pink-500/10 to-rose-500/10 border border-pink-500/15">
-                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white mb-2 shadow-md">
+              <div className="space-y-3">
+                <div className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-br from-pink-500/10 to-rose-500/10 border border-pink-500/15">
+                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white shrink-0 shadow-md">
                     <FaMapMarkerAlt size={16} />
                   </div>
-                  <p className="text-xs font-semibold text-foreground leading-tight">Punjab</p>
-                  <p className="text-[10px] text-muted-foreground">India</p>
+                  <div>
+                    <p className="text-[10px] text-muted-foreground uppercase tracking-wide">Location</p>
+                    <p className="text-sm font-semibold text-foreground">Punjab, India</p>
+                  </div>
                 </div>
 
-                <div className="flex flex-col items-center text-center p-3 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/15">
-                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white mb-2 shadow-md">
+                <div className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/15">
+                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white shrink-0 shadow-md">
                     <FaGraduationCap size={16} />
                   </div>
-                  <p className="text-xs font-semibold text-foreground leading-tight">B.Tech</p>
-                  <p className="text-[10px] text-muted-foreground">CS @ LPU</p>
+                  <div>
+                    <p className="text-[10px] text-muted-foreground uppercase tracking-wide">Education</p>
+                    <p className="text-sm font-semibold text-foreground">B.Tech CS @ LPU</p>
+                  </div>
                 </div>
 
-                <div className="flex flex-col items-center text-center p-3 rounded-xl bg-gradient-to-br from-orange-500/10 to-amber-500/10 border border-orange-500/15">
-                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-white mb-2 shadow-md">
+                <div className="flex items-center gap-4 p-3 rounded-xl bg-gradient-to-br from-orange-500/10 to-amber-500/10 border border-orange-500/15">
+                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-white shrink-0 shadow-md">
                     <FaBriefcase size={16} />
                   </div>
-                  <p className="text-xs font-semibold text-foreground leading-tight">8.45</p>
-                  <p className="text-[10px] text-muted-foreground">CGPA</p>
+                  <div>
+                    <p className="text-[10px] text-muted-foreground uppercase tracking-wide">CGPA</p>
+                    <p className="text-sm font-semibold text-foreground">8.45 / 10</p>
+                  </div>
                 </div>
               </div>
             </div>
