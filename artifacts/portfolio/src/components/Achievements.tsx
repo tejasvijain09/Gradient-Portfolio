@@ -2,16 +2,16 @@ import { motion } from "framer-motion";
 
 const achievements = [
   {
-    icon: "⭐",
-    title: "4-Star Silver Badge in C++ — HackerRank",
-    date: "April 2025",
-    description: "Earned a 4-star Silver Badge in C++ on HackerRank, demonstrating solid proficiency in core language concepts, problem-solving skills, and algorithmic thinking."
-  },
-  {
     icon: "🥉",
     title: "2-Star Bronze Badge in Python — HackerRank",
     date: "July 2025",
     description: "Secured a 2-Star Bronze Badge in Python on HackerRank, showcasing strong command over Python language fundamentals and ability to solve competitive programming challenges."
+  },
+  {
+    icon: "⭐",
+    title: "4-Star Silver Badge in C++ — HackerRank",
+    date: "April 2025",
+    description: "Earned a 4-star Silver Badge in C++ on HackerRank, demonstrating solid proficiency in core language concepts, problem-solving skills, and algorithmic thinking."
   },
   {
     icon: "🏆",
