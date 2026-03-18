@@ -2,45 +2,6 @@ import { motion } from "framer-motion";
 import { Route, Lightbulb } from "lucide-react";
 import { FaMapMarkerAlt, FaGraduationCap, FaBriefcase, FaMusic, FaLaptop, FaMicrochip } from "react-icons/fa";
 
-const quickFacts = [
-  {
-    icon: <FaMapMarkerAlt size={20} />,
-    color: "from-pink-500 to-rose-500",
-    label: "Location",
-    value: "Punjab, India",
-  },
-  {
-    icon: <FaGraduationCap size={20} />,
-    color: "from-blue-500 to-cyan-500",
-    label: "Education",
-    value: "Pursuing B.Tech in Computer Science",
-  },
-  {
-    icon: <FaBriefcase size={20} />,
-    color: "from-orange-500 to-amber-500",
-    label: "Experience",
-    value: "Internship",
-  },
-];
-
-const interests = [
-  {
-    icon: <FaMusic size={20} />,
-    color: "from-pink-500 to-rose-500",
-    label: "Listening to Music",
-  },
-  {
-    icon: <FaLaptop size={20} />,
-    color: "from-blue-500 to-indigo-500",
-    label: "Web Surfing",
-  },
-  {
-    icon: <FaMicrochip size={20} />,
-    color: "from-purple-500 to-violet-500",
-    label: "Tech Exploration",
-  },
-];
-
 export function About() {
   return (
     <section id="about" className="py-24 relative">
@@ -63,37 +24,74 @@ export function About() {
             viewport={{ once: true }}
             className="lg:col-span-5 space-y-6"
           >
-            {/* Quick Facts Card */}
+            {/* Snapshot — 3 mini stat cards */}
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-lg font-bold font-display mb-5 text-foreground">Quick Facts</h3>
-              <ul className="space-y-3">
-                {quickFacts.map((fact) => (
-                  <li key={fact.label} className="flex items-center gap-4">
-                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${fact.color} flex items-center justify-center text-white shrink-0 shadow-lg`}>
-                      {fact.icon}
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground mb-0.5">{fact.label}</p>
-                      <p className="text-sm font-medium text-foreground">{fact.value}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-xs font-semibold tracking-widest text-primary uppercase mb-5">— At a Glance</p>
+              <div className="grid grid-cols-3 gap-3">
+                <div className="flex flex-col items-center text-center p-3 rounded-xl bg-gradient-to-br from-pink-500/10 to-rose-500/10 border border-pink-500/15">
+                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white mb-2 shadow-md">
+                    <FaMapMarkerAlt size={16} />
+                  </div>
+                  <p className="text-xs font-semibold text-foreground leading-tight">Punjab</p>
+                  <p className="text-[10px] text-muted-foreground">India</p>
+                </div>
+
+                <div className="flex flex-col items-center text-center p-3 rounded-xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/15">
+                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white mb-2 shadow-md">
+                    <FaGraduationCap size={16} />
+                  </div>
+                  <p className="text-xs font-semibold text-foreground leading-tight">B.Tech</p>
+                  <p className="text-[10px] text-muted-foreground">CS @ LPU</p>
+                </div>
+
+                <div className="flex flex-col items-center text-center p-3 rounded-xl bg-gradient-to-br from-orange-500/10 to-amber-500/10 border border-orange-500/15">
+                  <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-white mb-2 shadow-md">
+                    <FaBriefcase size={16} />
+                  </div>
+                  <p className="text-xs font-semibold text-foreground leading-tight">8.45</p>
+                  <p className="text-[10px] text-muted-foreground">CGPA</p>
+                </div>
+              </div>
             </div>
 
-            {/* Interests Card */}
+            {/* Off the Clock */}
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-lg font-bold font-display mb-5 text-foreground">When I'm Not Coding</h3>
-              <ul className="space-y-3">
-                {interests.map((item) => (
-                  <li key={item.label} className="flex items-center gap-4 p-3 rounded-xl bg-secondary/40 border border-white/5 hover:border-primary/30 transition-colors">
-                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center text-white shrink-0 shadow-lg`}>
-                      {item.icon}
-                    </div>
-                    <span className="text-sm font-medium text-foreground">{item.label}</span>
-                  </li>
-                ))}
-              </ul>
+              <p className="text-xs font-semibold tracking-widest text-primary uppercase mb-5">— Off the Clock</p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-4 group">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaMusic size={18} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Listening to Music</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">My go-to reset — helps me focus and unwind between long coding sessions.</p>
+                  </div>
+                </div>
+
+                <div className="h-px bg-white/5" />
+
+                <div className="flex items-start gap-4 group">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-white shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaLaptop size={18} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Web Surfing</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">Always browsing — whether it's dev blogs, design inspo, or the latest in tech.</p>
+                  </div>
+                </div>
+
+                <div className="h-px bg-white/5" />
+
+                <div className="flex items-start gap-4 group">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-purple-500 to-violet-500 flex items-center justify-center text-white shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                    <FaMicrochip size={18} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Tech Exploration</p>
+                    <p className="text-xs text-muted-foreground mt-0.5">Tinkering with new tools and frameworks just to see what's possible.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
 
