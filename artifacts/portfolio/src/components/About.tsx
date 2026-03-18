@@ -113,13 +113,13 @@ export function About() {
                 <h3 className="text-2xl font-bold font-display text-primary">My Journey</h3>
               </div>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                Hello! I'm <span className="text-primary font-semibold">Tejasvi Jain</span>, a passionate full-stack developer with a deep love for transforming complex problems into elegant digital solutions.
+                I'm <span className="text-primary font-semibold">Tejasvi Jain</span>, a B.Tech Computer Science student at LPU with hands-on experience in full-stack development through real-world internships and self-driven projects.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
-                My journey in tech began with curious exploration and has evolved into focused expertise in full-stack development. I specialize in building responsive, user-centered applications using React, Node.js, and modern cloud infrastructure.
+                I chose Full Stack Development because I love owning the entire product — from crafting pixel-perfect UIs to designing robust backend APIs — giving me the ability to bring complete ideas to life independently.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                What drives me is the intersection of technology and creativity — finding that perfect balance between functional code and intuitive design. I'm constantly expanding my skills through hands-on projects and keeping up with emerging technologies.
+                My goal is to grow as a software engineer who builds scalable, impactful web applications, and eventually contribute to products that solve real-world problems at scale.
               </p>
             </div>
 
