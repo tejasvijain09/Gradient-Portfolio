@@ -27,11 +27,11 @@ const allProjects = [
     id: 3,
     title: "Art Critique Bot",
     description: "An AI-powered system that analyses and critiques digital artworks, generating structured feedback across 3–5 artistic dimensions (composition, colour, style, creativity). Built with GPT-4 and Streamlit UI, deployed via Docker for multi-user cloud access.",
-    image: "project-ecommerce.png",
+    image: "art-critique-bot.png",
     categories: ["AI/ML", "Full Stack"],
     tech: ["GPT-4", "LLM", "Streamlit", "Docker", "Python"],
-    liveUrl: "#",
-    sourceUrl: "https://github.com/tejasvijain09"
+    liveUrl: "https://art-critique-bot-iubu3ncjq9mar7njrxrcx7.streamlit.app",
+    sourceUrl: "https://github.com/tejasvijain09/art-critique-bot"
   }
 ];
 
