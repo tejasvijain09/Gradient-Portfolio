@@ -17,11 +17,11 @@ const allProjects = [
     id: 2,
     title: "Intelligent CPU Scheduler System",
     description: "An intelligent simulation tool to evaluate and compare 4 CPU scheduling algorithms (FCFS, Round Robin, SJF, Priority). Implements performance visualization using Gantt charts and metric plots, analysing waiting time, turnaround time, and CPU utilization across 10–20 processes.",
-    image: "project-ecommerce.png",
+    image: "cpu-scheduler.png",
     categories: ["Systems", "C++"],
     tech: ["C++", "Matplotlib", "Algorithm Design"],
-    liveUrl: "#",
-    sourceUrl: "https://github.com/tejasvijain09"
+    liveUrl: "https://tejasvijain09.github.io/Intelligent-CPU-Scheduler-Simulator/",
+    sourceUrl: "https://github.com/tejasvijain09/Intelligent-CPU-Scheduler-Simulator"
   },
   {
     id: 3,
@@ -119,8 +119,10 @@ export function Projects() {
                   <div className="flex items-center gap-3 pt-4 border-t border-white/5">
                     <a
                       href={project.liveUrl}
+                      target={project.liveUrl !== "#" ? "_blank" : undefined}
+                      rel="noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold hover:opacity-90 transition-opacity text-sm"
-                      onClick={(e) => e.preventDefault()}
+                      onClick={project.liveUrl === "#" ? (e) => e.preventDefault() : undefined}
                     >
                       <ExternalLink size={16} /> Live Demo
                     </a>
