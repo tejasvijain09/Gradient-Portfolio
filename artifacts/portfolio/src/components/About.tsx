@@ -7,7 +7,7 @@ const quickFacts = [
     icon: <FaMapMarkerAlt size={20} />,
     color: "from-pink-500 to-rose-500",
     label: "Location",
-    value: "India",
+    value: "Punjab, India",
   },
   {
     icon: <FaGraduationCap size={20} />,
