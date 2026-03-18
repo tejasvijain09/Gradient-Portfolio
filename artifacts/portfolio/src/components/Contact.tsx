@@ -16,13 +16,13 @@ export function Contact() {
           <div className="w-20 h-1.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mt-4" />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Reach Out Card */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-card rounded-2xl p-8 flex flex-col items-center text-center gap-6"
+            className="glass-card rounded-2xl p-8 flex flex-col items-center text-center gap-6 h-full"
           >
             <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center shadow-lg shadow-primary/25">
               <MessageCircle size={36} className="text-white" />
@@ -46,9 +46,9 @@ export function Contact() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="h-full"
           >
-            <div className="glass-card rounded-2xl p-8">
+            <div className="glass-card rounded-2xl p-8 h-full">
               <h3 className="text-2xl font-bold font-display text-foreground mb-8">Contact Information</h3>
               
               <ul className="space-y-6">
