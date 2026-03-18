@@ -1,33 +1,38 @@
 import { motion } from "framer-motion";
-import { Calendar, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { PdfPreview } from "./PdfPreview";
 
 const certifications = [
   {
     title: "ChatGPT, Generative AI & LLM",
     platform: "Infosys Springboard",
-    date: "Aug '25",
-    color: "from-orange-500 to-amber-500",
+    date: "Aug 2025",
+    description: "Comprehensive course on ChatGPT-4 prompt engineering, generative AI fundamentals, and large language model applications.",
+    platformColor: "bg-orange-500",
     pdf: `${import.meta.env.BASE_URL}certs/chatgpt-ai.pdf`
   },
   {
-    title: "GitHub Mastery",
+    title: "GitHub Mastery: From Beginner to Advanced",
     platform: "GeeksForGeeks",
-    date: "Jun '25",
-    color: "from-green-500 to-emerald-500",
+    date: "Jun 2025",
+    description: "6-week in-depth course covering Git workflows, branching strategies, collaboration, CI/CD, and advanced GitHub features.",
+    platformColor: "bg-green-600",
     pdf: `${import.meta.env.BASE_URL}certs/github-mastery.pdf`
   },
   {
-    title: "Hardware and Operating Systems",
+    title: "Introduction to Hardware and Operating Systems",
     platform: "Coursera — IBM",
-    date: "Aug '24",
-    color: "from-blue-500 to-cyan-500",
+    date: "Aug 2024",
+    description: "IBM-authorized course covering computer hardware components, operating system fundamentals, and system administration basics.",
+    platformColor: "bg-blue-600",
     pdf: `${import.meta.env.BASE_URL}certs/hardware-os.pdf`
   },
   {
     title: "Entrepreneurship Learning Pathway",
     platform: "LinkedIn Learning",
-    date: "Oct '23",
-    color: "from-purple-500 to-violet-500",
+    date: "Oct 2023",
+    description: "Learning path covering small business management, business planning, and entrepreneurship strategies over 6 hours 55 minutes.",
+    platformColor: "bg-[#0077b5]",
     pdf: `${import.meta.env.BASE_URL}certs/entrepreneurship.pdf`
   }
 ];
@@ -58,34 +63,46 @@ export function Certifications() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 flex flex-col cursor-pointer"
+              className="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition-all duration-300 flex flex-col cursor-pointer border border-white/5 hover:border-primary/30"
             >
-              {/* PDF Preview */}
-              <div className="h-48 relative overflow-hidden bg-white">
-                <iframe
-                  src={`${cert.pdf}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                  className="w-full h-full pointer-events-none"
-                  title={cert.title}
-                />
+              {/* PDF Preview Area */}
+              <div className="relative overflow-hidden h-52">
+                <PdfPreview url={cert.pdf} className="h-full w-full" />
+
+                {/* Platform badge top-left */}
+                <span className={`absolute top-3 left-3 ${cert.platformColor} text-white text-xs font-bold px-2.5 py-1 rounded-md shadow-md z-10`}>
+                  {cert.platform.split("—")[0].trim().split(" ")[0]}
+                </span>
+
+                {/* Date badge bottom-right */}
+                <span className="absolute bottom-3 right-3 bg-black/60 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-1 rounded-md z-10">
+                  {cert.date}
+                </span>
+
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2 z-20">
                   <ExternalLink size={20} className="text-white" />
-                  <span className="text-white font-semibold text-sm">View Certificate</span>
+                  <span className="text-white font-semibold text-sm">Open Certificate</span>
                 </div>
               </div>
 
+              {/* Card Body */}
               <div className="p-5 flex flex-col flex-grow">
-                <h3 className="text-base font-bold font-display text-foreground mb-3 leading-snug flex-grow">
+                <h3 className="text-base font-bold font-display text-gradient mb-2 leading-snug">
                   {cert.title}
                 </h3>
-                <div className="flex items-center justify-between mt-2">
-                  <span className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold">
-                    {cert.platform}
-                  </span>
-                  <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                    <Calendar size={12} className="text-primary" /> {cert.date}
-                  </span>
+                <p className="text-muted-foreground text-xs leading-relaxed flex-grow line-clamp-3">
+                  {cert.description}
+                </p>
+                <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/5">
+                  <span className="text-primary text-xs font-medium">{cert.platform}</span>
+                  <span className="text-muted-foreground text-xs">{cert.date}</span>
                 </div>
+              </div>
+
+              {/* Footer hint */}
+              <div className="px-5 py-2.5 border-t border-white/5 text-center">
+                <span className="text-muted-foreground text-xs">Hover to view details</span>
               </div>
             </motion.a>
           ))}
