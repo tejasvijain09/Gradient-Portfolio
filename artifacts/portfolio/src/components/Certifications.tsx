@@ -1,30 +1,34 @@
 import { motion } from "framer-motion";
-import { Award, Calendar } from "lucide-react";
+import { Calendar, ExternalLink } from "lucide-react";
 
 const certifications = [
   {
     title: "ChatGPT, Generative AI & LLM",
     platform: "Infosys Springboard",
     date: "Aug '25",
-    color: "from-orange-500 to-amber-500"
+    color: "from-orange-500 to-amber-500",
+    pdf: `${import.meta.env.BASE_URL}certs/chatgpt-ai.pdf`
   },
   {
     title: "GitHub Mastery",
     platform: "GeeksForGeeks",
     date: "Jun '25",
-    color: "from-green-500 to-emerald-500"
+    color: "from-green-500 to-emerald-500",
+    pdf: `${import.meta.env.BASE_URL}certs/github-mastery.pdf`
   },
   {
     title: "Hardware and Operating Systems",
     platform: "Coursera — IBM",
     date: "Aug '24",
-    color: "from-blue-500 to-cyan-500"
+    color: "from-blue-500 to-cyan-500",
+    pdf: `${import.meta.env.BASE_URL}certs/hardware-os.pdf`
   },
   {
     title: "Entrepreneurship Learning Pathway",
     platform: "LinkedIn Learning",
     date: "Oct '23",
-    color: "from-purple-500 to-violet-500"
+    color: "from-purple-500 to-violet-500",
+    pdf: `${import.meta.env.BASE_URL}certs/entrepreneurship.pdf`
   }
 ];
 
@@ -45,22 +49,29 @@ export function Certifications() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {certifications.map((cert, index) => (
-            <motion.div
+            <motion.a
               key={cert.title}
+              href={cert.pdf}
+              target="_blank"
+              rel="noreferrer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 flex flex-col"
+              className="glass-card rounded-2xl overflow-hidden group hover:-translate-y-2 transition-transform duration-300 flex flex-col cursor-pointer"
             >
-              {/* Gradient Header */}
-              <div className={`h-36 bg-gradient-to-br ${cert.color} flex items-center justify-center relative`}>
-                <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center shadow-lg">
-                  <Award size={30} className="text-white" />
-                </div>
-                <div className="absolute inset-0 opacity-20"
-                  style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 20px)" }}
+              {/* PDF Preview */}
+              <div className="h-48 relative overflow-hidden bg-white">
+                <iframe
+                  src={`${cert.pdf}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                  className="w-full h-full pointer-events-none"
+                  title={cert.title}
                 />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
+                  <ExternalLink size={20} className="text-white" />
+                  <span className="text-white font-semibold text-sm">View Certificate</span>
+                </div>
               </div>
 
               <div className="p-5 flex flex-col flex-grow">
@@ -76,7 +87,7 @@ export function Certifications() {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>
