@@ -38,6 +38,18 @@ const allProjects = [
     tech: ["GPT-4", "LLM", "Streamlit", "Docker", "Python"],
     liveUrl: "https://art-critique-bot-iubu3ncjq9mar7njrxrcx7.streamlit.app",
     sourceUrl: "https://github.com/tejasvijain09/art-critique-bot"
+  },
+  {
+    id: 4,
+    title: "Car Rental System",
+    description: "A backend-driven car rental system for managing vehicle listings, bookings, and customer records. Includes RESTful services, JDBC and MySQL data operations, availability tracking, rental booking, and customer management with a scalable modular design.",
+    image: "car-rental-system.png",
+    imagePosition: "object-center",
+    imageStyle: { objectFit: "contain" as const, backgroundColor: "#ffffff" },
+    categories: ["Full Stack", "Java"],
+    tech: ["Java", "Spring Boot", "JDBC", "MySQL"],
+    liveUrl: "#",
+    sourceUrl: "https://github.com/tejasvijain09/car-rental-system"
   }
 ];
 
