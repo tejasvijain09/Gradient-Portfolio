@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 const achievements = [
   {
-    icon: "🥉",
-    title: "2-Star Bronze Badge in Python — HackerRank",
-    date: "July 2025",
-    description: "Secured a 2-Star Bronze Badge in Python on HackerRank, showcasing strong command over Python language fundamentals and ability to solve competitive programming challenges."
+    icon: "💻",
+    title: "500+ Coding Problems Solved — GeeksForGeeks & LeetCode",
+    date: "Ongoing",
+    description: "Solved more than 500 coding problems across platforms including GeeksForGeeks and LeetCode, strengthening data structures, algorithms, and problem-solving skills."
   },
   {
     icon: "⭐",

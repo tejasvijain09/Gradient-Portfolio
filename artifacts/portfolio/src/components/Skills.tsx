@@ -3,20 +3,28 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const allSkills = [
   { name: "Java", icon: "☕", progress: 85, category: "Programming" },
-  { name: "C++", icon: "⚙️", progress: 70, category: "Programming" },
-  { name: "HTML", icon: "📄", progress: 95, category: "Frontend" },
+  { name: "C++", icon: "⚙️", progress: 78, category: "Programming" },
+  { name: "JavaScript", icon: "🟨", progress: 88, category: "Programming" },
+  { name: "HTML", icon: "📄", progress: 92, category: "Frontend" },
   { name: "CSS", icon: "🎨", progress: 85, category: "Frontend" },
-  { name: "JavaScript", icon: "🟨", progress: 90, category: "Frontend" },
-  { name: "React", icon: "⚛️", progress: 90, category: "Frontend" },
-  { name: "Node.js", icon: "🟢", progress: 85, category: "Backend" },
-  { name: "Express", icon: "🚀", progress: 80, category: "Backend" },
-  { name: "Spring Boot", icon: "🌱", progress: 75, category: "Backend" },
-  { name: "MongoDB", icon: "🍃", progress: 80, category: "Database" },
-  { name: "MySQL", icon: "🐬", progress: 80, category: "Database" },
+  { name: "React.js", icon: "⚛️", progress: 86, category: "Frontend" },
+  { name: "Spring Boot", icon: "🌱", progress: 78, category: "Backend" },
+  { name: "Node.js", icon: "🟢", progress: 84, category: "Backend" },
+  { name: "Express", icon: "🚀", progress: 82, category: "Backend" },
+  { name: "REST APIs", icon: "🔗", progress: 84, category: "Backend" },
+  { name: "JWT", icon: "🔐", progress: 78, category: "Backend" },
+  { name: "MySQL", icon: "🐬", progress: 82, category: "Database" },
+  { name: "MongoDB", icon: "🍃", progress: 78, category: "Database" },
+  { name: "JDBC", icon: "🔌", progress: 80, category: "Database" },
+  { name: "Hibernate", icon: "🗃️", progress: 70, category: "Database" },
   { name: "Git", icon: "🔀", progress: 85, category: "Tools" },
+  { name: "GitHub", icon: "🐙", progress: 85, category: "Tools" },
+  { name: "Linux", icon: "🐧", progress: 70, category: "Tools" },
+  { name: "Data Structures & Algorithms", icon: "🧩", progress: 80, category: "Core" },
+  { name: "Problem-Solving", icon: "🧠", progress: 85, category: "Core" },
 ];
 
-const categories = ["All Skills", "Programming", "Frontend", "Backend", "Database", "Tools"];
+const categories = ["All Skills", "Programming", "Frontend", "Backend", "Database", "Tools", "Core"];
 
 export function Skills() {
   const [activeFilter, setActiveFilter] = useState("All Skills");

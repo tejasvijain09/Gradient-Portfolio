@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Search } from "lucide-react";
 
 const allProjects = [
   {
@@ -46,14 +46,14 @@ const allProjects = [
     image: "car-rental-system.jpg",
     imagePosition: "object-center",
     imageStyle: {},
-    categories: ["Full Stack", "Java"],
+    categories: ["Full Stack", "Java", "Java / Spring Boot"],
     tech: ["Java", "Spring Boot", "JDBC", "MySQL"],
     liveUrl: "#",
     sourceUrl: "https://github.com/tejasvijain09/car-rental-system"
   }
 ];
 
-const filters = ["All Projects", "Full Stack", "MERN", "AI/ML", "Systems", "C++"];
+const filters = ["All Projects", "Full Stack", "MERN", "AI/ML", "Systems", "C++", "Java / Spring Boot"];
 
 export function Projects() {
   const [activeFilter, setActiveFilter] = useState("All Projects");
@@ -82,12 +82,13 @@ export function Projects() {
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+                className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                 activeFilter === filter
                   ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg shadow-primary/25"
                   : "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-white/5"
               }`}
             >
+              {filter === "Java / Spring Boot" && <Search size={15} />}
               {filter}
             </button>
           ))}

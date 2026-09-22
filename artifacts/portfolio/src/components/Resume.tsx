@@ -1,17 +1,16 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download, Mail, Phone, Linkedin, Github } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 const tabs = ["Education", "Training", "Projects", "Certificates", "Achievements"];
 
 const educationData = [
   {
     institution: "Lovely Professional University",
-    location: "Punjab, India",
+    location: "Phagwara, Punjab",
     degree: "Bachelor of Technology — Computer Science and Engineering",
     duration: "Aug '23 – Present",
-    score: "CGPA: 8.45",
+    score: "CGPA: 8.43",
   },
   {
     institution: "DM Public Senior Secondary School",
@@ -34,7 +33,7 @@ const trainingData = [
     category: "INTERNSHIP",
     title: "E-Commerce Web Application using MERN Stack",
     org: "MyVirtualTeams (IT Services Company)",
-    duration: "Jun '25 – Jul '25",
+    duration: "Jun '23 – Jul '25",
     points: [
       "Acquired comprehensive understanding of full-stack development by mastering the MERN stack and applying end-to-end concepts in a real-world e-commerce project.",
       "Strengthened API integration and authentication expertise by learning RESTful architecture, JWT-based security, and secure client-server communication.",
@@ -47,27 +46,30 @@ const trainingData = [
 const projectsData = [
   {
     category: "PROJECT",
-    title: "Intelligent CPU Scheduler System",
-    org: "CPP, Matplotlib",
-    duration: "Apr '25",
+    title: "Car Rental System",
+    org: "Java, Spring Boot, JDBC, MySQL",
+    duration: "Nov '25",
     points: [
-      "Developed an intelligent simulation tool to evaluate and compare 4 CPU scheduling algorithms, improving understanding of optimal process execution behaviour.",
-      "Implemented FCFS, Round Robin, SJF, and Priority scheduling in C++, with performance visualization using Gantt charts and metric plots via Matplotlib.",
-      "Analysed key metrics including average waiting time, turnaround time, and CPU utilization, enabling clear performance comparison across multiple test cases (10–20 processes).",
+      "Developed a backend-driven Car Rental System to manage vehicle listings, bookings, and customer records, improving overall system efficiency.",
+      "Built RESTful services using Spring Boot for user requests and business logic processing.",
+      "Implemented database operations using JDBC and MySQL for efficient data storage, retrieval, and transaction management.",
+      "Designed car availability tracking, rental booking, and customer management features with scalable, maintainable OOP-based structure.",
     ],
-    tech: "C++, Matplotlib",
+    tech: "Java, Spring Boot, JDBC, MySQL",
+    sourceUrl: "https://github.com/tejasvijain09/car-rental-system",
   },
   {
     category: "PROJECT",
     title: "Art Critique Bot",
-    org: "GPT-4, LLM, Streamlit",
-    duration: "Jan '25",
+    org: "GPT-4, LLM, Streamlit, Docker",
+    duration: "Oct '24",
     points: [
       "Designed an AI-powered system to analyse and critique digital artworks, generating structured feedback across 3–5 artistic dimensions (composition, colour, style, creativity).",
       "Built the application using GPT-4 with Streamlit UI, and deployed via Docker to support multi-user access in a cloud environment.",
       "Enabled automated critique generation for multiple artwork styles, reducing manual review effort and improving feedback consistency by standardizing output format.",
     ],
     tech: "GPT-4, LLM, Streamlit, Docker",
+    sourceUrl: "https://github.com/tejasvijain09/art-critique-bot",
   },
 ];
 
@@ -90,14 +92,14 @@ const achievementsData = [
     description: "Earned a 4-star Silver Badge in C++ on HackerRank, demonstrating solid proficiency in core language concepts and effective problem-solving skills.",
   },
   {
-    icon: "🥉",
-    title: "2-Star Bronze Badge in Python — HackerRank",
-    description: "Secured a 2-Star Bronze Badge in Python on HackerRank, showcasing strong command over language fundamentals and problem-solving abilities.",
+    icon: "💻",
+    title: "500+ Coding Problems Solved — GeeksForGeeks & LeetCode",
+    description: "Solved more than 500 coding problems across platforms including GeeksForGeeks and LeetCode, strengthening data structures, algorithms, and problem-solving skills.",
   },
 ];
 
-function CardEntry({ category, title, org, duration, points, tech }: {
-  category: string; title: string; org: string; duration: string; points: string[]; tech: string;
+function CardEntry({ category, title, org, duration, points, tech, sourceUrl }: {
+  category: string; title: string; org: string; duration: string; points: string[]; tech: string; sourceUrl?: string;
 }) {
   return (
     <motion.div
@@ -122,17 +124,22 @@ function CardEntry({ category, title, org, duration, points, tech }: {
       <p className="text-sm text-muted-foreground">
         <span className="text-foreground font-semibold">Tech:</span> {tech}
       </p>
+      {sourceUrl && (
+        <a
+          href={sourceUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+        >
+          <Github size={15} /> View Repository
+        </a>
+      )}
     </motion.div>
   );
 }
 
 export function Resume() {
   const [activeTab, setActiveTab] = useState("Education");
-  const { toast } = useToast();
-
-  const handleDownload = () => {
-    toast({ title: "Resume Download", description: "Resume download will be available soon!" });
-  };
 
   return (
     <section id="resume" className="py-24 bg-card/30 relative">
@@ -285,12 +292,13 @@ export function Resume() {
           viewport={{ once: true }}
           className="flex justify-center mt-12"
         >
-          <button
-            onClick={handleDownload}
+          <a
+            href={`${import.meta.env.BASE_URL}certs/SpecializedCV_TejasviJain_2026.pdf`}
+            download="Tejasvi-Jain-Resume-2026.pdf"
             className="flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             <Download size={18} /> Download Resume
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
