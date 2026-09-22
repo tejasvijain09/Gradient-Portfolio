@@ -1,0 +1,16 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "nKc3uC-rViHxP6-_c3cKM"
+uri = "file://README.md"
+type = "text"
+title = "Car Rental System README"
+description = "GitHub-ready README for the Java Spring Boot car rental project."
+logical_id = "10d0bc50-1042-415f-8efd-f24acfa85dc7"
+content_hash = "sha256:73e577e70d8a0f9cb70ac471f063c51faad816be31d3dc4762f1a4befb827d25"
+size = 4492
+mtime_ms = 1790097721716
+storage_uri = "gcs://replit-rams-assets-sisko/rams/assets/repl:3560f984-d2c1-4968-ae29-8525179c5132/10d0bc50-1042-415f-8efd-f24acfa85dc7/418aa1f2-076b-43fe-a028-8529bd5dc984"
+storage_version_token = "1790097731238402"
+content_type = "text/markdown"
