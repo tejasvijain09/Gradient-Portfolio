@@ -10,7 +10,7 @@ const educationData = [
     location: "Phagwara, Punjab",
     degree: "Bachelor of Technology — Computer Science and Engineering",
     duration: "Aug '23 – Present",
-    score: "CGPA: 8.43",
+    score: "CGPA: 8.55",
   },
   {
     institution: "DM Public Senior Secondary School",
